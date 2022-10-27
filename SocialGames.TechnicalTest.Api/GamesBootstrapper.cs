@@ -1,14 +1,14 @@
-﻿using LightInject;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace SocialGames.TechnicalTest.Api
 {
     public class GamesBootstrapper
     {
-        IServiceContainer _serviceContainer;
+        IServiceCollection _serviceCollection;
 
-        public GamesBootstrapper(IServiceContainer container)
+        public GamesBootstrapper(IServiceCollection collection)
         {
-            _serviceContainer = container;
+            _serviceCollection = collection;
         }
 
         public void Run()
