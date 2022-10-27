@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SocialGames.TechnicalTest.Api\SocialGames.TechnicalTest.Api.csproj" />
+    <ProjectReference Include="..\SocialGames.TechnicalTest.IoC\SocialGames.TechnicalTest.IoC.csproj" />
   </ItemGroup>
 
 </Project>
