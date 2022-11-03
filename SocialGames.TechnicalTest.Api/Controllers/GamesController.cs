@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SocialGames.TechnicalTest.Api.Controllers.Base;
@@ -17,5 +18,12 @@ public class GamesController : ApiControllerBase<GamesController>
     public async Task<IActionResult> Play([FromRoute] string gameId)
     {
         return Ok(gameId);
+    }
+
+    [Route("throw")]
+    [HttpPost]
+    public async Task<IActionResult> Throw()
+    {
+        throw new NotImplementedException("Hermanitos, no esta implementado aún :(");
     }
 }
