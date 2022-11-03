@@ -1,22 +1,38 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using SocialGames.TechnicalTest.Api;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using System.Reflection;
 using SocialGames.TechnicalTest.IoC;
+using Serilog;
+using Microsoft.Extensions.Configuration;
+using System.IO;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
+using SocialGames.TechnicalTest.ApiService.Extensions;
 
 var apiName = Assembly.GetEntryAssembly().GetName().Name;
 
 var builder = WebApplication.CreateBuilder();
 
-builder.Services.AddControllers()
-                .AddControllersAsServices();
+builder.Configuration
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json");
 
-builder.Services.AddSwaggerGen();
-builder.Services.RegisterGames();
+builder.Services
+    .AddControllers()
+    .AddControllersAsServices();
+
+builder.Services.AddSwaggerGen()
+    .RegisterGames();
+
+
+builder.AddSerilogLogging();
+
 
 var app = builder.Build();
+
+app.UseSerilogRequestLogging();
 
 if (!app.Environment.IsProduction())
 {
@@ -36,4 +52,4 @@ app.UseRouting();
 
 app.MapControllers();
 
-app.Run();
+await app.RunAsync();
