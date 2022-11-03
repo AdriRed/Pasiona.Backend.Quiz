@@ -25,7 +25,6 @@ public class GlobalExceptionMiddleware
         catch (System.Exception ex)
         {
             var logger = factory.CreateLogger($"{ex.TargetSite.Module.Name}@{ex.TargetSite.Name}");
-
             logger.LogError(ex, "Catched error in GlobalExceptionMiddleware");
         }
     }

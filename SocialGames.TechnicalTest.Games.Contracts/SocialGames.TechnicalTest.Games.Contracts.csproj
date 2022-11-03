@@ -1,13 +1,14 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\SocialGames.TechnicalTest.Games.Contracts\SocialGames.TechnicalTest.Games.Contracts.csproj" />
     <ProjectReference Include="..\SocialGames.TechnicalTest.Resources\SocialGames.TechnicalTest.Resources.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-	  <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
 </Project>

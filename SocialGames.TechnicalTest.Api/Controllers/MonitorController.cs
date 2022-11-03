@@ -1,14 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using SocialGames.TechnicalTest.Api.Controllers.Base;
 
 namespace SocialGames.TechnicalTest.Api.Controllers;
 
-public class MonitorController : ApiControllerBase<MonitorController>
+public class MonitorController : ControllerBase
 {
-    public MonitorController(ILogger<MonitorController> logger) : base(logger)
-    {
-    }
 
     [HttpGet("/")]
     public IActionResult Heartbeat()

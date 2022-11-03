@@ -10,5 +10,11 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SocialGames.TechnicalTest.Games.Contracts\SocialGames.TechnicalTest.Games.Contracts.csproj" />
+    <ProjectReference Include="..\SocialGames.TechnicalTest.Games\SocialGames.TechnicalTest.Games.csproj" />
+    <ProjectReference Include="..\SocialGames.TechnicalTest.Validators\SocialGames.TechnicalTest.Validators.csproj" />
+  </ItemGroup>
+
 </Project>
     

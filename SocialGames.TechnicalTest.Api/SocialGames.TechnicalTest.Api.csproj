@@ -11,6 +11,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SocialGames.TechnicalTest.Games\SocialGames.TechnicalTest.Games.csproj" />
+    <ProjectReference Include="..\SocialGames.TechnicalTest.Resources\SocialGames.TechnicalTest.Resources.csproj" />
+    <ProjectReference Include="..\SocialGames.TechnicalTest.Games.Contracts\SocialGames.TechnicalTest.Games.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

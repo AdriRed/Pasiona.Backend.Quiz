@@ -25,10 +25,7 @@ builder.Services
 
 builder.Services.AddSwaggerGen()
     .RegisterGames();
-
-
 builder.AddSerilogLogging();
-
 
 var app = builder.Build();
 
@@ -43,10 +40,10 @@ if (!app.Environment.IsProduction())
     });
 }
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
-}
+// if (app.Environment.IsDevelopment())
+// {
+//     // app.UseExceptionHandler()
+// }
 
 app.UseRouting();
 

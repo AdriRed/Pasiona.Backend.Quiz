@@ -4,6 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
