@@ -10,6 +10,11 @@ using System.IO;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
 using SocialGames.TechnicalTest.ApiService.Extensions;
+using System.Globalization;
+
+CultureInfo defaultCulture = new CultureInfo("en-EU");
+CultureInfo.DefaultThreadCurrentCulture = defaultCulture;
+CultureInfo.DefaultThreadCurrentUICulture = defaultCulture;
 
 var apiName = Assembly.GetEntryAssembly().GetName().Name;
 
@@ -19,17 +24,19 @@ builder.Configuration
     .SetBasePath(Directory.GetCurrentDirectory())
     .AddJsonFile("appsettings.json");
 
-builder.Services
+builder.Services.AddSwaggerGen()
+    .RegisterGames()
+    .RegisterValidators()
     .AddControllers()
     .AddControllersAsServices();
 
-builder.Services.AddSwaggerGen()
-    .RegisterGames();
 builder.AddSerilogLogging();
 
 var app = builder.Build();
 
+app.UseRequestLocalization();
 app.UseSerilogRequestLogging();
+
 
 if (!app.Environment.IsProduction())
 {
@@ -39,11 +46,6 @@ if (!app.Environment.IsProduction())
         c.SwaggerEndpoint("/swagger/v1/swagger.json", apiName);
     });
 }
-
-// if (app.Environment.IsDevelopment())
-// {
-//     // app.UseExceptionHandler()
-// }
 
 app.UseRouting();
 

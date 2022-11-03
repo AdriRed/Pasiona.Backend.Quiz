@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SocialGames.TechnicalTest.Api.Controllers;
@@ -20,8 +21,13 @@ public class GamesController : ControllerBase
 
     [Route("{gameId}/play")]
     [HttpPost]
-    public async Task<IActionResult> Play([FromRoute] string gameId)
+    public async Task<IActionResult> Play([FromRoute] string gameId, [FromServices] IValidator<string> _nameValidator)
     {
+        var validation = _nameValidator.Validate(gameId);
+        if (!validation.IsValid)
+        {
+            return ValidationProblem(new ValidationProblemDetails(validation.ToDictionary()));
+        }
         var result = await _service.GetIndexesFactoryAsync(gameId);
         return Ok(result);
     }
