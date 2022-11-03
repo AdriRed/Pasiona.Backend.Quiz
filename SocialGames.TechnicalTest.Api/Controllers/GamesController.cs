@@ -22,7 +22,31 @@ public class GamesController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Play([FromRoute] string gameId)
     {
-        var result = await _service.GetIndexesAsync(gameId);
+        var result = await _service.GetIndexesFactoryAsync(gameId);
+        return Ok(result);
+    }
+
+    [Route("{gameId}/play/yield/seq")]
+    [HttpPost]
+    public async Task<IActionResult> Play2([FromRoute] string gameId)
+    {
+        var result = await _service.GetIndexesYieldSequentialAsync(gameId);
+        return Ok(result);
+    }
+
+    [Route("{gameId}/play/yield")]
+    [HttpPost]
+    public async Task<IActionResult> Play3([FromRoute] string gameId)
+    {
+        var result = await _service.GetIndexesYieldAsync(gameId);
+        return Ok(result);
+    }
+
+    [Route("{gameId}/play/seq")]
+    [HttpPost]
+    public async Task<IActionResult> Play4([FromRoute] string gameId)
+    {
+        var result = await _service.GetIndexesSequentialAsync(gameId);
         return Ok(result);
     }
 
