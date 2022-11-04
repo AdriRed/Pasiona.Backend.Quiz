@@ -7,45 +7,45 @@ namespace SocialGames.TechnicalTest.Games.Implementations
 {
     public class GamesService : IGamesService
     {
-        public async Task<IEnumerable<CharIndexResource>> GetIndexesFactoryAsync(string name)
+        public async Task<IEnumerable<CharIndexResource>> GetIndexesAsync(string name)
         {
             var delay = Task.Delay(500);
-            var task = Task.Factory.StartNew((state) => Comparation(state.ToString()), state: name);
+            var task = Task.Run(() => Comparation(name));
 
             await Task.WhenAll(task, delay);
 
             return task.Result;
         }
 
-        public async Task<IEnumerable<CharIndexResource>> GetIndexesYieldAsync(string name)
-        {
-            var delay = Task.Delay(500);
-            var task = Task.Factory.StartNew((state) => ComparationYield(state.ToString()), state: name);
+        // public async Task<IEnumerable<CharIndexResource>> GetIndexesYieldAsync(string name)
+        // {
+        //     var delay = Task.Delay(500);
+        //     var task = Task.Run((state) => ComparationYield(name));
 
-            await Task.WhenAll(task, delay);
+        //     await Task.WhenAll(task, delay);
 
-            return task.Result;
-        }
+        //     return task.Result;
+        // }
 
-        public async Task<IEnumerable<CharIndexResource>> GetIndexesYieldSequentialAsync(string name)
-        {
-            var delay = Task.Delay(500);
-            var result = ComparationYield(name);
+        // public async Task<IEnumerable<CharIndexResource>> GetIndexesYieldSequentialAsync(string name)
+        // {
+        //     var delay = Task.Delay(500);
+        //     var result = ComparationYield(name);
 
-            await delay;
+        //     await delay;
 
-            return result;
-        }
+        //     return result;
+        // }
 
-        public async Task<IEnumerable<CharIndexResource>> GetIndexesSequentialAsync(string name)
-        {
-            var delay = Task.Delay(500);
-            var result = Comparation(name);
+        // public async Task<IEnumerable<CharIndexResource>> GetIndexesSequentialAsync(string name)
+        // {
+        //     var delay = Task.Delay(500);
+        //     var result = Comparation(name);
 
-            await delay;
+        //     await delay;
 
-            return result;
-        }
+        //     return result;
+        // }
 
         private IEnumerable<CharIndexResource> ComparationYield(string str)
         {

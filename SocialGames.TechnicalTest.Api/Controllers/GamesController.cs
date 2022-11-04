@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SocialGames.TechnicalTest.Api.Controllers;
 using SocialGames.TechnicalTest.Games.Contracts;
+using SocialGames.TechnicalTest.Games.Resources;
 
 namespace SocialGames.TechnicalTest.Api.Controllers;
 
@@ -21,40 +22,17 @@ public class GamesController : ControllerBase
 
     [Route("{gameId}/play")]
     [HttpPost]
-    public async Task<IActionResult> Play([FromRoute] string gameId, [FromServices] IValidator<string> _nameValidator)
+    public async Task<IActionResult> Play([FromRoute] string gameId, [FromServices] IValidator<GameIdResource> _nameValidator)
     {
-        var validation = _nameValidator.Validate(gameId);
+        var validation = _nameValidator.Validate(new GameIdResource { GameId = gameId });
         if (!validation.IsValid)
         {
             return ValidationProblem(new ValidationProblemDetails(validation.ToDictionary()));
         }
-        var result = await _service.GetIndexesFactoryAsync(gameId);
+        var result = await _service.GetIndexesAsync(gameId);
         return Ok(result);
     }
 
-    [Route("{gameId}/play/yield/seq")]
-    [HttpPost]
-    public async Task<IActionResult> Play2([FromRoute] string gameId)
-    {
-        var result = await _service.GetIndexesYieldSequentialAsync(gameId);
-        return Ok(result);
-    }
-
-    [Route("{gameId}/play/yield")]
-    [HttpPost]
-    public async Task<IActionResult> Play3([FromRoute] string gameId)
-    {
-        var result = await _service.GetIndexesYieldAsync(gameId);
-        return Ok(result);
-    }
-
-    [Route("{gameId}/play/seq")]
-    [HttpPost]
-    public async Task<IActionResult> Play4([FromRoute] string gameId)
-    {
-        var result = await _service.GetIndexesSequentialAsync(gameId);
-        return Ok(result);
-    }
 
     [Route("throw")]
     [HttpPost]
