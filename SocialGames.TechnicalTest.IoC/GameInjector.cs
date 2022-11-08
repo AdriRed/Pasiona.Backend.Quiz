@@ -1,8 +1,8 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
-using SocialGames.TechnicalTest.Api.Validators;
 using SocialGames.TechnicalTest.Games.Contracts;
 using SocialGames.TechnicalTest.Games.Implementations;
+using SocialGames.TechnicalTest.Validations.Validators;
 
 namespace SocialGames.TechnicalTest.IoC
 {

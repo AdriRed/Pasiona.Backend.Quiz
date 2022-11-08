@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30002.166
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Presentation", "1. Presentation", "{6E270233-F88E-4CF6-9654-F1978191D4AB}"
 EndProject
@@ -9,13 +9,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Business", "2. Business"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialGames.TechnicalTest.ApiService", "SocialGames.TechnicalTest.ApiService\SocialGames.TechnicalTest.ApiService.csproj", "{7397DE9D-BBB4-4152-B228-8CB6B899A377}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialGames.TechnicalTest.Api", "SocialGames.TechnicalTest.Api\SocialGames.TechnicalTest.Api.csproj", "{E55266A8-CC5A-41CC-9675-D80EA45C07B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialGames.TechnicalTest.Api", "SocialGames.TechnicalTest.Api\SocialGames.TechnicalTest.Api.csproj", "{E55266A8-CC5A-41CC-9675-D80EA45C07B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialGames.TechnicalTest.Games", "SocialGames.TechnicalTest.Games\SocialGames.TechnicalTest.Games.csproj", "{D85D46B0-A336-466F-9D4C-12C0DC87BFF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialGames.TechnicalTest.Games", "SocialGames.TechnicalTest.Games\SocialGames.TechnicalTest.Games.csproj", "{D85D46B0-A336-466F-9D4C-12C0DC87BFF6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. IOC", "3. IOC", "{E9372379-D673-4AB8-9218-6B224E053598}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialGames.TechnicalTest.IoC", "SocialGames.TechnicalTest.IoC\SocialGames.TechnicalTest.IoC.csproj", "{5240FC57-9DA8-42F7-B1CB-CC7758EE434C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialGames.TechnicalTest.IoC", "SocialGames.TechnicalTest.IoC\SocialGames.TechnicalTest.IoC.csproj", "{5240FC57-9DA8-42F7-B1CB-CC7758EE434C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialGames.TechnicalTest.Validations", "SocialGames.TechnicalTest.Validations\SocialGames.TechnicalTest.Validations.csproj", "{A20E940C-1D18-42AD-A3E5-F0254D5A6007}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialGames.TechnicalTest.Resources", "SocialGames.TechnicalTest.Resources\SocialGames.TechnicalTest.Resources.csproj", "{C1BB3FAF-2411-46E6-97F7-D3D3CEB7D35D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,15 +43,25 @@ Global
 		{5240FC57-9DA8-42F7-B1CB-CC7758EE434C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5240FC57-9DA8-42F7-B1CB-CC7758EE434C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5240FC57-9DA8-42F7-B1CB-CC7758EE434C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A20E940C-1D18-42AD-A3E5-F0254D5A6007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A20E940C-1D18-42AD-A3E5-F0254D5A6007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A20E940C-1D18-42AD-A3E5-F0254D5A6007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A20E940C-1D18-42AD-A3E5-F0254D5A6007}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1BB3FAF-2411-46E6-97F7-D3D3CEB7D35D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1BB3FAF-2411-46E6-97F7-D3D3CEB7D35D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1BB3FAF-2411-46E6-97F7-D3D3CEB7D35D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1BB3FAF-2411-46E6-97F7-D3D3CEB7D35D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{5240FC57-9DA8-42F7-B1CB-CC7758EE434C} = {E9372379-D673-4AB8-9218-6B224E053598}
 		{7397DE9D-BBB4-4152-B228-8CB6B899A377} = {6E270233-F88E-4CF6-9654-F1978191D4AB}
 		{E55266A8-CC5A-41CC-9675-D80EA45C07B7} = {6E270233-F88E-4CF6-9654-F1978191D4AB}
 		{D85D46B0-A336-466F-9D4C-12C0DC87BFF6} = {F0CC2155-6AA7-429D-B793-FB2A086D7162}
+		{5240FC57-9DA8-42F7-B1CB-CC7758EE434C} = {E9372379-D673-4AB8-9218-6B224E053598}
+		{A20E940C-1D18-42AD-A3E5-F0254D5A6007} = {F0CC2155-6AA7-429D-B793-FB2A086D7162}
+		{C1BB3FAF-2411-46E6-97F7-D3D3CEB7D35D} = {F0CC2155-6AA7-429D-B793-FB2A086D7162}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {04E35FAA-5549-49BD-8EF2-821D06A271F2}

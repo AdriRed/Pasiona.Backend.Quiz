@@ -1,4 +1,4 @@
-﻿namespace SocialGames.TechnicalTest.Games.Resources
+﻿namespace SocialGames.TechnicalTest.Resources
 {
     public class CharIndexResource
     {

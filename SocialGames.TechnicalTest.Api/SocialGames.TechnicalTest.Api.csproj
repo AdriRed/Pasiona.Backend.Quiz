@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SocialGames.TechnicalTest.Games\SocialGames.TechnicalTest.Games.csproj" />
+    <ProjectReference Include="..\SocialGames.TechnicalTest.Validations\SocialGames.TechnicalTest.Validations.csproj" />
   </ItemGroup>
 
 </Project>

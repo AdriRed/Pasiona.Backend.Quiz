@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using SocialGames.TechnicalTest.Games.Contracts;
-using SocialGames.TechnicalTest.Games.Resources;
+using SocialGames.TechnicalTest.Resources;
 
 namespace SocialGames.TechnicalTest.Games.Implementations
 {
@@ -10,42 +10,11 @@ namespace SocialGames.TechnicalTest.Games.Implementations
         public async Task<IEnumerable<CharIndexResource>> GetIndexesAsync(string name)
         {
             var delay = Task.Delay(500);
-            var task = Task.Run(() => Comparation(name));
+            var enumerable = ComparationYield(name); // <- hay muchisimas formas de generar la colección
+            await Task.WhenAll(delay);
 
-            await Task.WhenAll(task, delay);
-
-            return task.Result;
+            return enumerable;
         }
-
-        // public async Task<IEnumerable<CharIndexResource>> GetIndexesYieldAsync(string name)
-        // {
-        //     var delay = Task.Delay(500);
-        //     var task = Task.Run((state) => ComparationYield(name));
-
-        //     await Task.WhenAll(task, delay);
-
-        //     return task.Result;
-        // }
-
-        // public async Task<IEnumerable<CharIndexResource>> GetIndexesYieldSequentialAsync(string name)
-        // {
-        //     var delay = Task.Delay(500);
-        //     var result = ComparationYield(name);
-
-        //     await delay;
-
-        //     return result;
-        // }
-
-        // public async Task<IEnumerable<CharIndexResource>> GetIndexesSequentialAsync(string name)
-        // {
-        //     var delay = Task.Delay(500);
-        //     var result = Comparation(name);
-
-        //     await delay;
-
-        //     return result;
-        // }
 
         private IEnumerable<CharIndexResource> ComparationYield(string str)
         {
