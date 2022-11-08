@@ -30,7 +30,7 @@ public class ApiController : ControllerBase
                 var errorType = errorTypes.First();
 
                 response = StatusCode((int)errorType, result);
-                
+
             }
         }
 

@@ -8,13 +8,14 @@ namespace SocialGames.TechnicalTest.IoC
 {
     public static class GameInjector
     {
-        public static IServiceCollection RegisterGames(this IServiceCollection collection) 
+        public static IServiceCollection RegisterGames(this IServiceCollection collection)
         {
             collection.AddSingleton<IGamesService, GamesService>();
             return collection;
         }
 
-        public static IServiceCollection RegisterValidators(this IServiceCollection collection) {
+        public static IServiceCollection RegisterValidators(this IServiceCollection collection)
+        {
             collection.AddValidatorsFromAssemblyContaining<GameNameValidator>();
             return collection;
         }

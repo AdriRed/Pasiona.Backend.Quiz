@@ -20,7 +20,7 @@ public static class LoggingExtensions
             .AddEventLog()
             .AddEventSourceLogger()
             .AddConfiguration(builder.Configuration);
-            // .AddSerilog();
+        // .AddSerilog();
 
         builder.Host
             .UseSerilog((context, config) =>
