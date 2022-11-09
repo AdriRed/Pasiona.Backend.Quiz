@@ -1,20 +1,18 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
-using System.Reflection;
-using SocialGames.TechnicalTest.IoC;
-using Serilog;
 using Microsoft.Extensions.Configuration;
-using System.IO;
-using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Serilog;
 using SocialGames.TechnicalTest.ApiService.Extensions;
-using System.Globalization;
 using SocialGames.TechnicalTest.ApiService.Middlewares;
+using SocialGames.TechnicalTest.IoC;
+using System.Globalization;
+using System.IO;
+using System.Reflection;
 
 // for validation messages
-CultureInfo defaultCulture = new CultureInfo("en-EU");
+var defaultCulture = new CultureInfo("en-EU");
 CultureInfo.DefaultThreadCurrentCulture = defaultCulture;
 CultureInfo.DefaultThreadCurrentUICulture = defaultCulture;
 

@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using FluentValidation;
+﻿using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using SocialGames.TechnicalTest.Api.Controllers;
 using SocialGames.TechnicalTest.Api.Controllers.Base;
 using SocialGames.TechnicalTest.Games.Contracts;
 using SocialGames.TechnicalTest.Resources;
 using SocialGames.TechnicalTest.Resources.Common;
 using SocialGames.TechnicalTest.Validations.Errors;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SocialGames.TechnicalTest.Api.Controllers;
 

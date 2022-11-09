@@ -1,14 +1,8 @@
-using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
-using Serilog.Core;
-using Serilog.Events;
-using Serilog.Expressions;
-using Serilog.Filters;
-using Serilog.Templates;
 
 namespace SocialGames.TechnicalTest.ApiService.Extensions;
 

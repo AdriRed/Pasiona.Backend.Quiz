@@ -1,7 +1,7 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using SocialGames.TechnicalTest.Games.Contracts;
 using SocialGames.TechnicalTest.Resources;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SocialGames.TechnicalTest.Games.Implementations
 {
@@ -20,7 +20,11 @@ namespace SocialGames.TechnicalTest.Games.Implementations
         {
             for (int i = 0; i < str.Length; i++)
             {
-                if (str[i] == 'o') yield break;
+                if (str[i] == 'o')
+                {
+                    yield break;
+                }
+
                 yield return new CharIndexResource
                 {
                     Index = i,
@@ -31,7 +35,7 @@ namespace SocialGames.TechnicalTest.Games.Implementations
 
         private IEnumerable<CharIndexResource> Comparation(string str)
         {
-            int lastChar = str.Length;
+            var lastChar = str.Length;
             if (str.Contains('o'))
             {
                 lastChar = str.IndexOf('o');

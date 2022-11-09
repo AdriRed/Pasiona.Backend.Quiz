@@ -1,12 +1,9 @@
-using System.Diagnostics;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Logging;
-using SocialGames.TechnicalTest.Games.Resources.Common;
 using SocialGames.TechnicalTest.Resources.Common;
 using SocialGames.TechnicalTest.Resources.Common.Errors;
+using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace SocialGames.TechnicalTest.ApiService.Middlewares;
 

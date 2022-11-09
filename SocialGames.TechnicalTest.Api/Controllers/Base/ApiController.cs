@@ -1,9 +1,6 @@
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SocialGames.TechnicalTest.Games.Resources.Common;
 using SocialGames.TechnicalTest.Resources.Common;
+using System.Linq;
 
 namespace SocialGames.TechnicalTest.Api.Controllers.Base;
 
@@ -29,7 +26,7 @@ public class ApiController : ControllerBase
             {
                 var errorType = errorTypes.First();
 
-                // si aquí se quiere definir un codigo de error diferente al status code se puede implementar con un diccionario
+                // si aquÃ­ se quiere definir un codigo de error diferente al status code se puede implementar con un diccionario
                 response = StatusCode((int)errorType, result);
 
             }

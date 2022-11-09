@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using SocialGames.TechnicalTest.Resources;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using SocialGames.TechnicalTest.Resources;
 
 namespace SocialGames.TechnicalTest.Games.Contracts
 {
