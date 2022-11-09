@@ -21,7 +21,7 @@ public class ApiController : ControllerBase
         else
         {
             var errorTypes = result.Errors.Select(x => x.Type).Distinct();
-            if (errorTypes.Count() != 1) // muchos errores con diferente tipo
+            if (errorTypes.Count() > 1) // muchos errores con diferente tipo
             {
                 response = base.BadRequest(result);
             }
@@ -29,6 +29,7 @@ public class ApiController : ControllerBase
             {
                 var errorType = errorTypes.First();
 
+                // si aquí se quiere definir un codigo de error diferente al status code se puede implementar con un diccionario
                 response = StatusCode((int)errorType, result);
 
             }

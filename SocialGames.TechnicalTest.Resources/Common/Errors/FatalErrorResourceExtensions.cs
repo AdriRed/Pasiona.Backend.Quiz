@@ -12,6 +12,7 @@ public static class FatalErrorResourceExtensions
     {
         var fatalError = new FatalErrorResource
         {
+            Message = ex.Message,
             Exception = ex.ToString()
         };
 

@@ -10,8 +10,8 @@ namespace SocialGames.TechnicalTest.Games.Implementations
         public async Task<IEnumerable<CharIndexResource>> GetIndexesAsync(string name)
         {
             var delay = Task.Delay(500);
-            var enumerable = ComparationYield(name); // <- hay muchisimas formas de generar la colección
-            await Task.WhenAll(delay);
+            var enumerable = Comparation(name);
+            await delay;
 
             return enumerable;
         }
@@ -36,7 +36,7 @@ namespace SocialGames.TechnicalTest.Games.Implementations
             {
                 lastChar = str.IndexOf('o');
             }
-            IList<CharIndexResource> results = new List<CharIndexResource>();
+            var results = new List<CharIndexResource>();
             for (int i = 0; i < lastChar; i++)
             {
                 results.Add(new CharIndexResource

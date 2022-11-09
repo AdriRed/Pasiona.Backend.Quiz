@@ -7,8 +7,6 @@ using Microsoft.Extensions.Logging;
 using SocialGames.TechnicalTest.Api.Controllers;
 using SocialGames.TechnicalTest.Api.Controllers.Base;
 using SocialGames.TechnicalTest.Games.Contracts;
-using SocialGames.TechnicalTest.Games.Resources;
-using SocialGames.TechnicalTest.Games.Resources.Common;
 using SocialGames.TechnicalTest.Resources;
 using SocialGames.TechnicalTest.Resources.Common;
 using SocialGames.TechnicalTest.Validations.Errors;
@@ -42,7 +40,7 @@ public class GamesController : ApiController
 
     [Route("throw")]
     [HttpPost]
-    public async Task<IActionResult> Throw()
+    public IActionResult Throw()
     {
         throw new NotImplementedException("Hermanitos, no esta implementado aún :(");
     }

@@ -1,5 +1,4 @@
 ﻿using FluentValidation.Results;
-using SocialGames.TechnicalTest.Games.Resources.Common.Errors;
 using SocialGames.TechnicalTest.Resources.Common;
 using System.Linq;
 
@@ -12,7 +11,7 @@ public static class ValidationErrorResourceExtensions
         var errors = results.Errors.GroupBy(x => x.PropertyName).Select(x =>
             new ValidationErrorResource()
             {
-                Message = $"Validation error while checking ",
+                Message = $"Invalid field value",
                 Field = x.Key,
                 Reasons = x.Select(x => x.ErrorMessage).ToArray()
             }

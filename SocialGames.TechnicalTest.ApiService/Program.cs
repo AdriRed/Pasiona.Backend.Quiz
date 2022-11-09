@@ -11,7 +11,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
 using SocialGames.TechnicalTest.ApiService.Extensions;
 using System.Globalization;
+using SocialGames.TechnicalTest.ApiService.Middlewares;
 
+// for validation messages
 CultureInfo defaultCulture = new CultureInfo("en-EU");
 CultureInfo.DefaultThreadCurrentCulture = defaultCulture;
 CultureInfo.DefaultThreadCurrentUICulture = defaultCulture;
@@ -37,6 +39,7 @@ var app = builder.Build();
 app.UseRequestLocalization();
 app.UseSerilogRequestLogging();
 
+app.UseMiddleware<GlobalExceptionMiddleware>();
 
 if (!app.Environment.IsProduction())
 {

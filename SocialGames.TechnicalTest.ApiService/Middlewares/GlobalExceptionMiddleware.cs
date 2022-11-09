@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -28,7 +29,7 @@ public class GlobalExceptionMiddleware
         catch (System.Exception ex)
         {
             var logger = factory.CreateLogger(ex.Source);
-            logger.LogError(ex, "Catched error in GlobalExceptionMiddleware");
+            logger.LogError(ex.Demystify(), "Catched error in GlobalExceptionMiddleware");
 
             context.Response.StatusCode = StatusCodes.Status500InternalServerError;
             await context.Response.WriteAsJsonAsync(ResultResource.Empty<object>().WithFatalError(ex));
